@@ -7,6 +7,10 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route("/plus")
+def index_plus():
+    return render_template('index_plus.html')
+
 def main():
     app.run(port=int(os.environ.get('PORT', 80)))
 

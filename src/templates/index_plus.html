@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Request Headers and Params</title>
+  </head>
+
+  <body>
+    <h1>All Request Headers and Params</h1>
+    <h2>All Request Headers</h2>
+    <ul>
+      {% for key, value in request.headers.items() %}
+      <li>{{ key }}: {{ value }}</li>
+      {% endfor %}
+    </ul>
+    <h2>All Query Params</h2>
+    <p>{{ request.args }}</p>
+    <ul>
+      {% for key, value in request.args.items() %}
+      <li>{{ key }}: {{ value }}</li>
+      {% endfor %}
+    </ul>
+    <h2>All Form Params</h2>
+    <ul>
+      {% for key, value in request.form.items() %}
+      <li>{{ key }}: {{ value }}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
